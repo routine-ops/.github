@@ -153,9 +153,3 @@
 | Agent | Autonomous unit performing a specific task       |
 
 ---
-
-## 8. Version History
-
-See Section 0 (Document Control) above.
-
-*End of Template*
