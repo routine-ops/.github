@@ -35,7 +35,7 @@
 4. **Push** to the branch (`git push origin feature/XYZ`).
 5. Open a **Pull Request**—we’ll review and merge!
 
-*Read the full guidelines in each repo’s [CONTRIBUTING.md]([https://github.com/routine-ops/routine-ops-plan-engine/blob/main/CONTRIBUTING.md](https://github.com/routine-ops/.github/blob/main/CONTRIBUTING.md).*
+*Read the full guidelines in each repo’s [CONTRIBUTING.md](https://github.com/routine-ops/.github/blob/main/CONTRIBUTING.md).*
 
 ---
 ## 🔄 Automated Updates
