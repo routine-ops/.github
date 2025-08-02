@@ -8,11 +8,12 @@
 
 ---
 
-## 📋 Project Board
+## 📋 Project Planning
 
-<p align="center">
-  <a href="https://github.com/orgs/routine-ops/projects/1"><img src="https://img.shields.io/badge/Project_Board-Kanban-blue?logo=github" alt="Kanban Board"/></a>
-</p>
+| Item              | link                                                                                                                                                                                    |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Requirements      |                                                                                                                                                                                         |
+| Project Board     | <p align="center"><a href="https://github.com/orgs/routine-ops/projects/1"><img src="https://img.shields.io/badge/Project_Board-Kanban-blue?logo=github" alt="Kanban Board"/></a></p>   |
 
 ---
 
