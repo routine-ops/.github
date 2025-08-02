@@ -13,7 +13,7 @@
 | Item              | link                                                                                                                                                                                    |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Requirements      | [Project Requirements](https://github.com/routine-ops/.github/blob/main/README.md)                                                                                                      |
-| Project Board     | <p align="center"><a href="https://github.com/orgs/routine-ops/projects/1"><img src="https://img.shields.io/badge/Project_Board-Kanban-blue?logo=github" alt="Kanban Board"/></a></p>   |
+| Project Board     | <p align="center"><a href="https://github.com/orgs/routine-ops/projects/2"><img src="https://img.shields.io/badge/Project_Board-Kanban-blue?logo=github" alt="Kanban Board"/></a></p>   |
 
 ---
 
