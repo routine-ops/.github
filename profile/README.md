@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/your-org/routine-ops/main/logo.png" alt="Routine-Ops Logo" width="200"/>
+  <img src="Original.png" alt="Routine-Ops Logo" width="200"/>
   <h1 align="center">Routine-Ops 🌟</h1>
   <p align="center">
     <em>Where workflows come alive & productivity takes flight!</em>
@@ -35,11 +35,11 @@
 
 Below are our core repositories. Click to explore:
 
-* [plan-engine](https://github.com/routine-ops/plan-engine) <img src="https://img.shields.io/github/last-commit/routine-ops/plan-engine?logo=github" alt="Last Commit" />
-* [backend-service](https://github.com/routine-ops/backend-service) <img src="https://img.shields.io/github/last-commit/routine-ops/backend-service?logo=github" alt="Last Commit" />
+* [routine-ops-plan-engine](https://github.com/routine-ops/routine-ops-plan-engine) <img src="https://img.shields.io/github/last-commit/routine-ops/plan-engine?logo=github" alt="Last Commit" />
+* [routine-ops-backend](https://github.com/routine-ops/routine-ops-backend) <img src="https://img.shields.io/github/last-commit/routine-ops/backend-service?logo=github" alt="Last Commit" />
 * [routine-ops-ui](https://github.com/routine-ops/routine-ops-ui) <img src="https://img.shields.io/github/last-commit/routine-ops/routine-ops-ui?logo=github" alt="Last Commit" />
-* [adapters](https://github.com/routine-ops/adapters) <img src="https://img.shields.io/github/last-commit/routine-ops/adapters?logo=github" alt="Last Commit" />
-* [common-utils](https://github.com/routine-ops/common-utils) <img src="https://img.shields.io/github/last-commit/routine-ops/common-utils?logo=github" alt="Last Commit" />
+<!-- * [adapters](https://github.com/routine-ops/adapters) <img src="https://img.shields.io/github/last-commit/routine-ops/adapters?logo=github" alt="Last Commit" /> -->
+<!-- * [common-utils](https://github.com/routine-ops/common-utils) <img src="https://img.shields.io/github/last-commit/routine-ops/common-utils?logo=github" alt="Last Commit" /> -->
 
 ---
 
