@@ -1,29 +1,42 @@
-# Requirements Document Template
+# Requirements Document
 
-> **Purpose:** Describe the intent of this document and how it supports development planning and stakeholder alignment.
+> **Purpose:** Capture and align all product requirements for Routine‑Ops, ensuring clear planning and smooth collaboration between Dieticians, Cooks, End Users, and Dev teams.
 
 ---
 
 ## Document Control
 
-| Version | Date       | Author    | Change Summary                     |
-| ------- | ---------- | --------- | ---------------------------------- |
-| 0.1     | YYYY-MM-DD | Your Name | Draft template creation            |
-| 0.2     | YYYY-MM-DD | Your Name | Updated based on stakeholder input |
+| Version | Date       | Author             | Change Summary          |
+| ------- | ---------- | ------------------ | ----------------------- |
+| 0.1     | 2025-08-02 | Satya Vishal Thota | Draft template creation |
 
 ---
 
 ## 1. Overview
 
-**1.1 Project Name:**
+**1.1 Project Name:** Routine‑Ops
 
-**1.2 Project Description:**
-*Briefly summarize the product/service and its key goals.*
+**1.2 Project Description:** A modular, agent‑driven platform that plans, orchestrates, and tracks daily routines—from meal prep and supplements to workouts—via an intelligent Planning Engine, robust Backend, and interactive UI.
 
 **1.3 Scope:**
 
-* What is in scope
-* What is out of scope
+* Build the Planning Engine with two key capabilities:
+
+  * Ingest Dietician‑provided nutrition plans and output a strict DSL representation.
+  * Generate weekly routine templates for normal users based on chatbot input, also rendered in the same DSL.
+  * A strictly‑defined DSL will standardize both flows.
+* Develop the Backend APIs and services to:
+
+  * Handle user authentication and authorization (JWT, role-based access).
+  * Serve DSL-generated plan data to the UI.
+  * Persist users’ daily event checklist entries.
+  * Calculate and update consistency scores in real time.
+  * Expose endpoints for consistency dashboards and analytics.
+* Create the UI frontend to deliver:
+
+  * Reference and execution screens tailored for Dieticians, Cooks, and End Users.
+  * Real-time daily checklist interface for users to toggle actions.
+  * Consistency dashboard and detailed report screens with analytics visualization.
 
 ---
 
@@ -40,6 +53,14 @@
 ---
 
 ## 3. Functional Requirements
+
+### 3.6 Backend Services
+
+| ID    | Requirement                                                    | Priority | Acceptance Criteria                              |
+| ----- | -------------------------------------------------------------- | -------- | ------------------------------------------------ |
+| FR-11 | Persist users’ daily checklist events                          | High     | Daily event records stored and retrievable       |
+| FR-12 | Calculate real-time consistency score based on persisted data  | High     | Score updates within 1s of event completion      |
+| FR-13 | Provide data for consistency dashboard and analytics endpoints | Medium   | Dashboard API returns correct metrics and trends |
 
 ### 3.1 Authentication & Authorization
 
