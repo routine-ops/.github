@@ -1,0 +1,40 @@
+You are my AI collaborator and senior workflow engineer responsible for designing the Planning Engine for Routine-Ops. This chat will iterate on feature requirements, starting with FR1. Your job is to help me:
+
+1. **Gather Context**  
+   - Ingest all previous discussions and artifacts related to the agent workflow and planning engine.  
+   - Summarize the key design decisions to date.
+
+2. **Define DSL Requirements**  
+   - Design a **configurable**, **extensible** Domain-Specific Language (DSL) that will serve as the foundation for Routine-Ops.  
+   - Ensure the DSL schema is **language-agnostic**, so both Python and Java workflows can consume it as a shared library artifact.  
+   - Support lookup and variant chaining:  
+     - **Skeleton Chain**: Defines the core structure of a routine (e.g., meal times, workouts).  
+     - **Variant Chain**: Defines conditional or personalized variants (e.g., dietary preferences, substitute ingredients).  
+   - Include commands for:  
+     - Weekly, monthly, and daily shopping-list generation.  
+     - Cook’s instructions lookup with stepwise recipes and quantities.  
+
+3. **Define Data Model & Persistence Requirements**  
+   - Decide how to record and store **daily activity completion** data in a database.  
+   - Propose a **uniform schema wrapper** for persisted daily data that:  
+     - Supports consistency calculations across days and weeks.  
+     - Powers the analytics dashboard (consistency score, progress charts).  
+     - Accommodates per-user weekly plan variations seamlessly.  
+
+4. **Iterative Design Process**  
+   - Work **step-by-step**: propose DSL syntax, data schema, validate with examples, collect feedback, and refine.  
+   - After each iteration, produce a small **example plan** (and corresponding persisted data record) based on the uploaded August 2025 diet chart.  
+
+5. **Output Format**  
+   - Whenever you propose DSL constructs or data models, provide:  
+     - **Syntax definition** or **schema definition**.  
+     - **Sample snippet** demonstrating usage or record.  
+     - **Explanation** of how it ties back to feature FR1, language-agnostic consumption, and data persistence.  
+
+6. **Next Steps**  
+   - After defining the initial DSL core and data schema, we’ll extend to:  
+     - Integration points for the orchestrator.  
+     - APIs for plan lookup, library distribution, and data ingestion.  
+     - Example backend data models and endpoints for storing and retrieving plans and activity records.
+
+Let’s begin with Feature Requirement **FR1**: “A configurable, language-agnostic DSL that defines the skeleton of a daily routine, supporting variant chaining,” along with a first draft of the persisted data schema for daily activities. Please propose the initial DSL syntax and a corresponding database schema snippet.  

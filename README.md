@@ -6,12 +6,15 @@
 
 ## Document Control
 
-| Version | Date       | Author             | Change Summary                                         |
-| ------- | ---------- | ------------------ | ------------------------------------------------------ |
-| 0.1     | 2025-08-02 | Satya Vishal Thota | Draft template creation                                |
-| 0.2     | 2025-08-03 | Satya Vishal Thota | Added End-User, Shopping List & Chatbot FR             |
-| 0.3     | 2025-08-03 | Satya Vishal Thota | Dietician dashboard access feature added & sections reordered |
-| 0.4     | 2025-08-03 | Satya Vishal Thota | UI/Screen Mockups flow reordered to prioritize dashboards |
+| Version | Date       | Author             | Change Summary                                                      |
+| ------- | ---------- | ------------------ | ------------------------------------------------------------------- |
+| 0.1     | 2025-08-02 | Satya Vishal Thota | Draft template creation                                             |
+| 0.2     | 2025-08-03 | Satya Vishal Thota | Added End-User, Shopping List & Chatbot FR                          |
+| 0.3     | 2025-08-03 | Satya Vishal Thota | Dietician dashboard access feature added & sections reordered       |
+| 0.4     | 2025-08-03 | Satya Vishal Thota | UI/Screen Mockups flow reordered to prioritize dashboards           |
+| 0.5     | 2025-08-03 | Satya Vishal Thota | Added Planning Engine DSL generation and monthly plan composition FR|
+| 0.6     | 2025-08-03 | Satya Vishal Thota | Renamed “Functional Requirements” section to “Feature Requirements” |
+| 0.7     | 2025-08-03 | Satya Vishal Thota | Sequentially renumbered FR IDs in Feature Requirements              |
 
 ---
 
@@ -23,7 +26,9 @@
 
 - **Planning Engine**  
   - Ingest Dietician-provided nutrition plans and output a strict DSL representation.  
+  - Design and generate a core weekly-plan DSL structure that captures all routine elements (meals, supplements, workouts, reminders).  
   - Generate weekly/monthly routine templates for normal users based on chatbot input, also rendered in the same DSL.  
+  - Allow monthly plans to be constructed as either a single weekly plan repeated for 4 weeks or a mix-and-match combination of multiple weekly plans.  
   - A strictly-defined DSL will standardize both flows.  
 - **Backend Services**  
   - User authentication & authorization (JWT, role-based access).  
@@ -50,50 +55,57 @@
 
 ---
 
-## 3. Functional Requirements
+## 3. Feature Requirements
 
-### 3.1 Authentication & Authorization
+### 3.1 Planning Engine
+
+| ID    | Requirement                                                                                          | Priority | Acceptance Criteria                                               |
+| ----- | ---------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------- |
+| FR-1  | Design and generate a core weekly-plan DSL structure that models meals, supplements, workouts, etc.  | High     | DSL schema defined; weekly plan serialized/parsed successfully    |
+| FR-2  | Compose monthly plans as either a single weekly plan repeated 4× or a mix-and-match of weekly plans | Medium   | Monthly DSL generation supports repetition and combination logic |
+
+### 3.2 Authentication & Authorization
 
 | ID    | Requirement                                                        | Priority | Notes            |
 | ----- | ------------------------------------------------------------------ | -------- | ---------------- |
-| FR-1  | Support Dietician, Cook, and End-User roles with role-based access | High     | JWT-based tokens |
-| FR-2  | OAuth login via Google and Apple IDs                               | Medium   | Use secure SDKs  |
-| FR-3  | Two-factor auth for Admin/DevOps                                   | Low      | Optional         |
+| FR-3  | Support Dietician, Cook, and End-User roles with role-based access | High     | JWT-based tokens |
+| FR-4  | OAuth login via Google and Apple IDs                               | Medium   | Use secure SDKs  |
+| FR-5  | Two-factor auth for Admin/DevOps                                   | Low      | Optional         |
 
-### 3.2 End User App
+### 3.3 End User App
 
 | ID    | Requirement                                               | Priority | Acceptance Criteria                          |
 | ----- | --------------------------------------------------------- | -------- | --------------------------------------------- |
-| FR-10 | Daily routine view with time-based checklist toggles      | High     | Checklist persists state                      |
-| FR-11 | Add/remove custom activities per day                      | High     | User-added items editable; predefined locked  |
-| FR-12 | Activate reminders for individual or all activities       | Medium   | Local notifications scheduled correctly       |
-| FR-13 | Monthly plan overview with interactive visualizer         | Medium   | Clickable nodes expand details inline         |
-| FR-14 | Consistency report screen with dynamic scoring            | Medium   | Score and streaks computed per requirements   |
+| FR-6  | Daily routine view with time-based checklist toggles      | High     | Checklist persists state                      |
+| FR-7  | Add/remove custom activities per day                      | High     | User-added items editable; predefined locked  |
+| FR-8  | Activate reminders for individual or all activities       | Medium   | Local notifications scheduled correctly       |
+| FR-9  | Monthly plan overview with interactive visualizer         | Medium   | Clickable nodes expand details inline         |
+| FR-10 | Consistency report screen with dynamic scoring            | Medium   | Score and streaks computed per requirements   |
 
-### 3.3 Shopping List Generator
+### 3.4 Shopping List Generator
 
-| ID     | Requirement                                              | Priority | Acceptance Criteria                                                |
-| ------ | -------------------------------------------------------- | -------- | ------------------------------------------------------------------- |
-| FR-17  | Daily shopping list                                      | High     | Lists ingredients for selected day; dynamic day swap works          |
-| FR-18  | Weekly shopping list                                     | Medium   | Aggregates quantities over 7 days                                  |
-| FR-19  | Monthly shopping list                                    | Low      | Aggregates quantities for calendar month; export/share functionality|
+| ID    | Requirement                       | Priority | Acceptance Criteria                                                |
+| ----- | --------------------------------- | -------- | ------------------------------------------------------------------- |
+| FR-11 | Daily shopping list               | High     | Lists ingredients for selected day; dynamic day swap works          |
+| FR-12 | Weekly shopping list              | Medium   | Aggregates quantities over 7 days                                  |
+| FR-13 | Monthly shopping list             | Low      | Aggregates quantities for calendar month; export/share functionality|
 
-### 3.4 Cook Interface
+### 3.5 Cook Interface
 
 | ID    | Requirement                          | Priority | Acceptance Criteria                     |
 | ----- | ------------------------------------ | -------- | --------------------------------------- |
-| FR-7  | Morning prep instructions generation | High     | Available by 07:30 daily                |
-| FR-8  | Evening prep instructions generation | High     | Available by 19:30 daily                |
-| FR-9  | Map Cooks → End-Users (1:N)          | High     | Cook sees only assigned End-Users       |
+| FR-14 | Morning prep instructions generation | High     | Available by 07:30 daily                |
+| FR-15 | Evening prep instructions generation | High     | Available by 19:30 daily                |
+| FR-16 | Map Cooks → End-Users (1:N)          | High     | Cook sees only assigned End-Users       |
 
-### 3.5 Dietician Portal
+### 3.6 Dietician Portal
 
 | ID    | Requirement                                              | Priority | Acceptance Criteria                                       |
 | ----- | -------------------------------------------------------- | -------- | ---------------------------------------------------------- |
-| FR-4  | List of users and their active plans                     | High     | Table view with filter & search                            |
-| FR-5  | Upload & initiate monthly plan for selected user         | High     | PDF/CSV upload flow with validation                        |
-| FR-6  | Map Dieticians → End-Users (1:N)                         | High     | Assign-user UI; mapping stored                             |
-| FR-7  | Access End-User dashboards & swap between user contexts  | Medium   | Dietician can view any End-User’s dashboard; user switcher |
+| FR-17 | List of users and their active plans                     | High     | Table view with filter & search                            |
+| FR-18 | Upload & initiate monthly plan for selected user         | High     | PDF/CSV upload flow with validation                        |
+| FR-19 | Map Dieticians → End-Users (1:N)                         | High     | Assign-user UI; mapping stored                             |
+| FR-20 | Access End-User dashboards & swap between user contexts  | Medium   | Dietician can view any End-User’s dashboard; user switcher |
 
 ---
 
